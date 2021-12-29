@@ -1,0 +1,30 @@
+<div class="grid justify-content-center card">
+  <div class="col-10 sm:col-6 md:col-4">
+    <p-card>
+      <div class="grid">
+        <div class="col-12 text-center">
+          <i (click)="redirecionarGeral()" class="pi pi-chevron-left" style="color: #007ad9; float: left; cursor:pointer;"></i>
+          <h1>Pacientes cadastrados</h1>
+          <button
+            pButton
+            type="button"
+            label="Cadastrar paciente"
+            class="col-12 p-button-success"
+            id="btnCadastrar"
+            (click)="redirecionarCadastroPacientes()"
+          ></button>
+        </div>
+        <div class="col-12">
+          <p-orderList [value]="listaPacientes">
+            <ng-template let-paciente pTemplate="item">
+              <div>
+                <div class="itemTurma" (click)="redirecionarPaciente(paciente.nome, paciente.cpf, paciente.endereco, '2')">{{paciente.nome}}</div>
+              </div>
+            </ng-template>
+          </p-orderList>
+        </div>
+
+      </div>
+    </p-card>
+  </div>
+</div>

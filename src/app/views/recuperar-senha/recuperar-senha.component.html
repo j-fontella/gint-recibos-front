@@ -1,0 +1,31 @@
+<div class="grid justify-content-center card">
+  <div class="col-10 sm:col-6 md:col-4">
+    <p-card>
+      <div class="grid">
+        <div class="col-12 text-center">
+          <i (click)="retornar()" class="pi pi-chevron-left" style="color: #007ad9; float: left; cursor:pointer;"></i>
+          <h2 id="title">Recuperar senha - {{email}}</h2>
+          <p id="msgErro"></p>
+        </div>
+        <div class="col-12" id="tokenRecuperar">
+          <label for="token">Token:</label>
+          <input id="token" class="col-12" type="text" pInputText />
+        </div>
+        <div class="col-12" id="novaSenha">
+          <label for="senha">Nova senha:</label>
+          <input id="senha" class="col-12" type="text" pInputText />
+        </div>
+        <div class="col-12">
+          <button
+            pButton
+            type="button"
+            label="Enviar"
+            class="col-12"
+            id="botaoLogin"
+            (click)="recuperar()"
+          ></button>
+        </div>
+      </div>
+    </p-card>
+  </div>
+</div>

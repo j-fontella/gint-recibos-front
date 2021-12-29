@@ -1,0 +1,84 @@
+<div class="grid justify-content-center card">
+  <div class="col-10 sm:col-6 md:col-4">
+    <p-card>
+      <div class="grid">
+        <div class="col-12 text-center">
+          <i (click)="redirecionarGeral()" class="pi pi-chevron-left" style="color: #007ad9; float: left; cursor:pointer;"></i>
+          <h1>Perfil</h1>
+          <p id="msgErro"></p>
+        </div>
+        <div class="col-12">
+          <label for="usuario">Email:</label>
+          <input id="usuario" class="col-12" type="text" pInputText [value]="usuario.email" />
+        </div>
+        <div class="col-12" id="nomeRegistro" >
+          <label for="nome">Nome:</label>
+          <input id="nome" class="col-12" type="text" pInputText [value]="usuario.nome"/>
+        </div>
+        <div class="col-12">
+          <label for="senha">Senha atual* :</label>
+          <input id="senha" class="col-12" type="password" pInputText />
+        </div>
+        <div class="col-12">
+          <label for="novasenha">Nova senha:</label>
+          <input id="novasenha" class="col-12" type="password" pInputText />
+        </div>
+        <div class="col-12">
+          <label for="docregistro">CPF/CNPJ:</label>
+          <input id="docregistro" class="col-12" type="text" pInputText [value]="usuario.docregistro" />
+        </div>
+        <div class="col-12">
+          <label for="cep">CEP:</label>
+          <input id="cep" (change)="getEnderecoPorCEP()" class="col-12" type="text" pInputText [value]="usuario.endereco.cep"/>
+        </div>
+        <div class="col-6">
+          <label for="logradouro">Logradouro:</label>
+          <input id="logradouro" class="col-12" type="text" pInputText disabled [value]="usuario.endereco.logradouro" />
+        </div>
+        <div class="col-6">
+          <label for="numero">Numero:</label>
+          <input id="numero" class="col-12" type="text" pInputText [value]="usuario.endereco.numero"/>
+        </div>
+        <div class="col-6">
+          <label for="complemento">Complemento:</label>
+          <input id="complemento" class="col-12" type="text" pInputText [value]="usuario.endereco.complemento" />
+        </div>
+        <div class="col-6">
+          <label for="bairro">Bairro:</label>
+          <input id="bairro" class="col-12" type="text" pInputText disabled [value]="usuario.endereco.bairro"/>
+        </div>
+        <div class="col-6">
+          <label for="cidade">Cidade:</label>
+          <input id="cidade" class="col-12" type="text" pInputText disabled [value]="usuario.endereco.cidade" />
+        </div>
+        <div class="col-6">
+          <label for="uf">UF:</label>
+          <input id="uf" class="col-12" type="text" pInputText disabled [value]="usuario.endereco.uf" />
+        </div>
+        <div class="col-6">
+          <label for="conselho">Conselho:</label>
+          <input id="conselho" class="col-12" type="text" pInputText [value]="usuario.conselho" />
+        </div>
+        <div class="col-6">
+          <label for="numeroconselho">Número do conselho:</label>
+          <input id="numeroconselho" class="col-12" type="text" pInputText [value]="usuario.numeroConselho" />
+        </div>
+        <div class="col-12">
+          <label for="profissao">Profissão:</label>
+          <input id="profissao" class="col-12" type="text" pInputText [value]="usuario.profissao"/>
+        </div>
+        <div class="col-12">
+          <button
+            pButton
+            type="button"
+            label="Salvar"
+            class="col-12"
+            id="botaoLogin"
+            (click)="salvarUsuario()"
+          ></button>
+        </div>
+
+      </div>
+    </p-card>
+  </div>
+</div>

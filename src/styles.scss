@@ -1,0 +1,17 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background-image: url("./assets/images/fundo-auto.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    opacity: 0.95;
+  }
+
+.label-registro{
+    cursor: pointer;
+    color: #1976d2;
+}
+
+button{
+  background-position: center;
+}

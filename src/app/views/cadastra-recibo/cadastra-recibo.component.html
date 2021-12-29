@@ -1,0 +1,70 @@
+<div class="grid justify-content-center card">
+  <div class="col-10 sm:col-6 md:col-4">
+    <p-card>
+      <div class="grid">
+        <div class="col-12 text-center">
+          <i (click)="redirecionarMenu()" class="pi pi-chevron-left" style="color: #007ad9; float: left; cursor:pointer;"></i>
+          <h2>Cadastrar Recibo</h2>
+          <p id="msgErro"></p>
+        </div>
+        <div class="col-12" id="nomeRegistro">
+          <label for="valor">Valor:</label>
+          <input id="valor" class="col-12" type="text" pInputText />
+        </div>
+        <div class="col-12">
+          <label for="cidade">Cidade:</label>
+          <input id="cidade" class="col-12" type="text" pInputText />
+        </div>
+        <div class="col-12">
+          <label for="data">Data:</label>
+          <input id="data" class="col-12" type="date">
+        </div>
+        <div class="col-12">
+          <label for="paciente">Paciente:</label>
+          <select id="paciente" class="col-12">
+          </select>
+        </div>
+        <div class="col-12">
+          <label for="servico">Serviço:</label>
+          <select id="servico" class="col-12">
+          </select>
+        </div>
+        <div class="col-12">
+          <label for="tipoProcedimento">Tipo de procedimento:</label>
+          <select id="tipoProcedimento" class="col-12" (change)="this.alterarVisualizacaoInputQtd()">
+            <option value="">Nenhum</option>
+            <option value="1">Sessão</option>
+            <option value="2">Atendimento</option>
+            <option value="3">Procedimento</option>
+            <option value="4">Consulta</option>
+          </select>
+        </div>
+        <div class="col-12">
+          <label for="observacao">Observação:</label>
+          <input id="observacao" class="col-12" type="text" pInputText />
+        </div>
+        <div class="col-12" id="divQtdTipoProcedimento" style="display: none">
+          <label for="qtdTipoProcedimento">Quantidade:</label>
+          <input id="qtdTipoProcedimento" class="col-12" type="number" pInputText />
+        </div>
+        <div class="col-12">
+          <p class="label-registro" style="text-align: center" (click)="addDataProcedimento()">Adicionar data de procedimento</p>
+          <div class="col-12" id="dataProcedimentos">
+          </div>
+          <p class="label-registro" style="text-align: center" (click)="removerDataProcedimento()">Remover data de procedimento</p>
+        </div>
+        <div class="col-12">
+          <button
+            pButton
+            type="button"
+            label="Cadastrar"
+            class="col-12 p-button-success"
+            id="botaoLogin"
+            (click)="registrarRecibo()"
+          ></button>
+        </div>
+
+      </div>
+    </p-card>
+  </div>
+</div>

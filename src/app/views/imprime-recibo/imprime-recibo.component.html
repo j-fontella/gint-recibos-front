@@ -1,0 +1,38 @@
+<div class="grid justify-content-center card">
+  <div class="col-10 sm:col-6 md:col-4">
+    <p-card>
+      <div class="grid">
+        <div class="col-12 text-center">
+          <i (click)="redirecionarGeral()" class="pi pi-chevron-left" style="color: #007ad9; float: left; cursor:pointer;"></i>
+          <h1>Imprimir Recibo</h1>
+          <button
+            pButton
+            type="button"
+            label="Imprimir"
+            class="col-12 p-button-success"
+            id="btnImprimir"
+            (click)="imprimir()"
+          ></button>
+        </div>
+        <div class="col-12" id="pacientes">
+          <h2>Selecione o paciente</h2>
+          <p-orderList [value]="listaPacientes">
+            <ng-template let-paciente pTemplate="item">
+              <div>
+                <div class="itemTurma" (click)="setPaciente(paciente.prk, paciente.nome)">{{paciente.nome}}</div>
+              </div>
+            </ng-template>
+          </p-orderList>
+        </div>
+        <div class="col-12" id="recibos" style="display: none">
+          <h2>Selecione os recibos</h2>
+          <div class="col-12" [formGroup]="recSelecionados">
+            <p-multiSelect id="recibosp" [style]="{'width':'100%'}" scrollHeight="300px" [options]="listaRecibos" formControlName="recsel" optionValue="prk" optionLabel="label"></p-multiSelect>
+          </div>
+        </div>
+
+
+      </div>
+    </p-card>
+  </div>
+</div>
